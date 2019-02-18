@@ -1,0 +1,64 @@
+
+.check__form
+  margin-top: 5px
+  position: relative
+  .label
+    user-select: none
+    cursor: pointer
+    margin-bottom: 0
+    font-size: 14px
+    position: relative
+  label
+    cursor: pointer
+    input:checked
+      & + .checkbox
+        border-color: #3f9e59
+        svg
+          path
+            fill: #fff
+          polyline
+            stroke-dashoffset: 0
+    &:hover
+      .checkbox
+        svg
+          path
+            stroke-dashoffset: 0
+  .checkbox
+    display: inline-block
+    vertical-align: middle
+    position: relative
+    width: 20px
+    height: 20px
+    border: 2px solid lightgrey
+    border-radius: 3px
+    cursor: pointer
+    svg
+      position: absolute
+      top: -2px
+      bottom: 0
+      left: -2px
+      right: 0
+      path
+        fill: none
+        stroke: #3f9e59
+        stroke-width: 2
+        stroke-linecap: round
+        stroke-linejoin: round
+        stroke-dasharray: 71px
+        stroke-dashoffset: 71px
+        transition: all .6s ease
+      polyline
+        fill: none
+        stroke: #3f9e59
+        stroke-width: 2
+        stroke-linecap: round
+        stroke-linejoin: round
+        stroke-dasharray: 18px
+        stroke-dashoffset: 18px
+        transition: all .3s ease
+  .invisible
+    position: absolute
+    z-index: -1
+    width: 0
+    height: 0
+    opacity: 0

@@ -1,0 +1,27 @@
+.header
+  .header-logo
+    img(src="./img/logo.png")
+  .header-menu
+    .header-menu-item
+      a(href="#") Main
+    .header-menu-item
+      a(href="#") News
+    .header-menu-item
+      a(href="#") Contacts
+  .header-toolbar
+    .header-toolbar-soc
+      a.icon.icon-facebook
+        svg
+          use(xlink:href="#facebook-icon")
+      a.icon.icon-instagram
+        svg
+          use(xlink:href="#instagram-icon")
+      a.icon.icon-twitter
+        svg
+          use(xlink:href="#twitter-icon")
+    .header-select.custom-select
+      select(size="3" name="hero")
+        option(disabled) Выберите героя
+        option(value="t1" selected) Чебурашка
+        option(value="t2" selected) Гена
+        option(value="t2" selected) Мерри Попинс
