@@ -49,7 +49,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.svg$/,
+        test: /svgIcons\.svg$/,
         exclude: /node_modules/,
         use: SvgSpriteHtmlWebpackPlugin.getLoader(),
       },
@@ -65,32 +65,13 @@ module.exports = {
         ]
       },
       {
-        test: /\.(gif|png|jpe?g|icon)$/i,
+        test: /\.(gif|png|jpe?g|icon|svg)$/i,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
+              esModule: false,
               name: "img/[name].[ext]"
-            }
-          },
-          {
-            loader: "image-webpack-loader",
-            options: {
-              disable: process.env.NODE_ENV ? false : true,
-              mozjpeg: {
-                progressive: true,
-                quality: 90
-              },
-              optipng: {
-                optimizationLevel: 9
-              },
-              pngquant: {
-                quality: "90",
-                speed: 9
-              },
-              gifsicle: {
-                interlaced: false
-              }
             }
           }
         ]
@@ -108,7 +89,7 @@ module.exports = {
     }),
     new SvgSpriteHtmlWebpackPlugin({
       includeFiles: [
-        'src/img/svg/*.svg',
+        'src/img/svgIcons/*.svg',
       ],
     }),
     new MiniCssExtractPlugin({
@@ -122,8 +103,7 @@ if(process.env.NODE_ENV) {
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: [
-          require('autoprefixer'),
-          require('cssnano')
+          require('autoprefixer')
         ]
       }
     })
